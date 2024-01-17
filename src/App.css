@@ -1,38 +1,972 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: 0.3s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+li {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.section {
+  padding: 4rem 0 2rem;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.flex {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.icon {
+  font-size: 2rem;
+  align-items: center;
+  color: grey;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  background: rgb(46, 46, 255);
+  border: 0;
+  outline: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  color: white;
+  margin-top: 1.5rem;
+}
+.btn a {
+  color: white;
+  font-weight: 500;
+}
+
+.btn:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.secIntro {
+  max-width: 70%;
+  text-align: center;
+  margin: 0 auto 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.secIntro .secTitle {
+  color: black;
+  line-height: 1.5rem;
+  padding-bottom: 5rem;
+}
+
+.secIntro p {
+  font-size: 13px;
+  color: white;
+  font-weight: 500;
+}
+
+img,
+video {
+  width: 100%;
+  height: auto;
+}
+
+input {
+  font-size: 100%;
+}
+
+/* Menu - barra de navegação */
+
+.navBarSection {
+  .header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    width: 100%;
+    padding: 1rem;
+    z-index: 1000;
+
+    .logoDiv {
+      .logo {
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          color: white;
+          font-size: 25px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .navBar {
+        background: rgb(228, 228, 228);
+        position: absolute;
+        height: max-content;
+        padding: 1rem;
+        width: 100%;
+        top: 0;
+        left: -500%;
+        box-shadow: 0 2px 4px rgba(233, 233, 233, 0.904);
+        transition: 0.5s ease;
+        z-index: 1000;
+
+        .navLists {
+          flex-direction: column;
+          justify-content: center;
+          width: 100%;
+          margin: auto;
+
+          .navItem {
+            padding: 1rem 0;
+
+            .navLink {
+              color: black;
+              font-size: 0.9rem;
+              font-weight: 600;
+              &:hover {
+                color: blue;
+              }
+            }
+          }
+        }
+
+        .closeNavbar {
+          position: absolute;
+          top: 1rem;
+          right: 1.5rem;
+          color: rgb(209, 136, 0);
+          &:hover .icon {
+            color: grey;
+          }
+        }
+      }
+
+      .activeNavbar {
+        left: 0;
+      }
+    }
+
+    .toggleNavbar {
+      .icon {
+        font-size: 25px;
+        color: white;
+        &:hover {
+          color: orange;
+        }
+      }
+    }
   }
-  to {
-    transform: rotate(360deg);
+
+  .activeHeader {
+    background: rgb(46, 46, 255);
+    box-sizing: 0 2px 8px 2px rgba(178, 178, 178, 0.45);
   }
+}
+
+/* Página Principal (Home) */
+
+.home {
+  height: 80vh;
+  background: linear-gradient(rgba(33, 33, 33, 0.522), rgba(15, 15, 15, 0.522)),
+    url(assets/lisboa.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+
+  .secContainer {
+    .homeText {
+      text-align: center;
+
+      .title {
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.5rem;
+      }
+
+      .subTitle {
+        color: white;
+        opacity: 0.9;
+        font-size: 13px;
+        font-weight: 300;
+        padding: 1rem 0;
+        max-width: 70%;
+        text-align: center;
+        margin: auto;
+      }
+    }
+
+    .homeCard {
+      width: 80%;
+      border-radius: 1rem;
+      padding: 2rem;
+      background: white;
+      position: absolute;
+      gap: 1rem;
+      justify-content: center;
+      bottom: -35%;
+      transform: translate(-50%);
+      left: 50%;
+      box-shadow: 0 2px 8px rgba(131, 131, 131, 0.45);
+    }
+  }
+}
+
+label {
+  display: block;
+  color: rgb(158, 158, 158);
+  font-weight: 500;
+  font-size: 13px;
+  padding-bottom: 0.4rem;
+}
+
+input {
+  width: 100%;
+  background: rgb(238, 238, 238);
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 500;
+
+  &::placeholder {
+    font-size: 13px;
+    opacity: 0.5;
+    font-weight: 400;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.offer {
+  margin-top: 30rem;
+}
+
+/* Lista Alojamentos */
+
+.offer {
+  .secContainer {
+    .mainContent {
+      gap: 1rem;
+
+      .singleOffer {
+        border-radius: 1rem;
+        overflow: hidden;
+        padding: 0.5rem;
+        box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.189);
+
+        .icon {
+          font-size: 20px;
+          color: rgb(107, 107, 107);
+        }
+        .infos-al {
+          color: rgb(107, 107, 107);
+        }
+      }
+    }
+  }
+}
+
+.destImage {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.discount {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background: blue;
+  color: white;
+  border-radius: 3rem;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.img-al {
+  width: 100%;
+}
+
+.offerBody {
+  padding: 1rem;
+
+  .price {
+    justify-content: space-between;
+  }
+
+  .botao-detalhes {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 0.6rem;
+    color: white;
+    font-weight: 600;
+    gap: 0.5rem;
+
+    .icon {
+      color: white !important;
+    }
+  }
+}
+
+.price-c {
+  color: black;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.status {
+  padding: 5px 10px;
+  color: blue;
+  background: rgb(247, 247, 247);
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 3rem;
+}
+
+.amenities {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 1rem 0;
+  gap: 0.5rem;
+
+  .singleAmenity {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: rgb(247, 247, 247);
+    gap: 0.5rem;
+  }
+}
+
+/* MEDIA QUERIES - PC/MOBILE */
+
+@media screen and (min-width: 556px) {
+  .mainContent {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 18rem;
+  }
+}
+
+@media screen and (min-width: 350px) {
+  .container {
+    width: 100% !important;
+    height: 0% !important;
+    margin-top: 0 !important;
+  }
+
+  .featured-listings {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featured-listings h1 {
+    font-weight: 400;
+  }
+  .caixinha {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .reservar-caixa button {
+    width: 9rem !important;
+  }
+
+  .house-details {
+    margin-top: 35rem !important;
+  }
+
+  .gallery {
+    display: grid !important;
+    grid-gap: 0.5rem !important;
+    grid-template-areas: "first first" !important;
+  }
+
+  .gallery img {
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 350px) {
+  .mainContent {
+    margin-top: 40rem;
+  }
+  .homeText {
+    margin-top: -10rem;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .home {
+    .secContainer {
+      .homeCard {
+        bottom: -100px;
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+        .btn {
+          transform: translate(15px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    width: 100% !important;
+    height: 0% !important;
+    margin-top: 0 !important;
+  }
+}
+
+@media screen and (min-width: 556px) {
+  .home {
+    .secContainer {
+      .homeText {
+        .title {
+          font-size: 2.5rem;
+        }
+        .subTitle {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .toggleNavbar,
+  .closeNavbar {
+    display: none;
+  }
+  .header {
+    padding: 1.5rem 2rem !important;
+    .navBar {
+      .navLists {
+        display: flex;
+        align-items: center;
+        justify-content: center !important;
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .featured-listings {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .featured-listings h1 {
+    font-weight: 500;
+    color: black;
+  }
+
+  .caixinha {
+    display: flex;
+    flex-direction: row !important;
+  }
+  .reservar-caixa button {
+    width: 12rem !important;
+  }
+
+  .house-details {
+    margin-top: 15rem !important;
+  }
+
+  .gallery {
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-areas: "first first . ." "first first . ." !important;
+  }
+
+  .navBarSection {
+    .toggleNavbar,
+    .closeNavbar {
+      display: none;
+    }
+
+    .header {
+      padding: 1.5rem;
+
+      .navBar {
+        .navLists {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .navItem {
+            .navLink {
+              color: white;
+              padding: 0 0.45rem;
+              font-size: 0.9rem;
+              font-weight: 400;
+              &:hover {
+                color: blue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .header {
+    .navBar {
+      .navLists {
+        .navItem {
+          padding: 0.7rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    padding: 1rem 8.5rem !important;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .home {
+    .secContainer {
+      .homeCard {
+        bottom: -20%;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .home {
+    .secContainer {
+      .homeCard {
+        bottom: -10%;
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .home {
+    .secContainer {
+      .homeText {
+        padding: 1rem 10rem;
+
+        .title {
+          font-size: 3.5rem;
+          margin: auto;
+          line-height: 4rem;
+        }
+
+        .subTitle {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .container {
+    width: 100% !important;
+    height: 0% !important;
+    margin-top: 0 !important;
+  }
+}
+
+@media screen and (min-width: 884px) {
+  .mainContent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 884px) {
+  .container {
+    width: 100% !important;
+    height: 0% !important;
+    margin-left: 2rem !important;
+    margin-right: 6rem !important;
+    margin-top: 0 !important;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .mainContent {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 18rem;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .container {
+    width: 100% !important;
+    height: 0% !important;
+    margin-left: 2rem !important;
+    margin-right: 6rem !important;
+    margin-top: 0 !important;
+  }
+
+  .homeText {
+    margin-top: 0;
+  }
+}
+
+.logotipo {
+  width: 25%;
+}
+
+/* Página Detalhes de alojamentos */
+
+.house-details {
+  padding: 0 12%;
+  margin-top: 15rem;
+}
+
+.house-title h1 {
+  font-weight: 600;
+}
+
+.row-detalhes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 1rem 0 !important;
+  color: grey;
+}
+
+span {
+  margin: 0 20px !important;
+}
+
+.detalhes-icones {
+  color: grey;
+  font-size: 1rem;
+}
+
+.gallery {
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-areas: "first first . ." "first first . .";
+}
+
+.i-detalhes {
+  width: 100% !important;
+  display: block !important;
+  border-radius: 1rem !important;
+}
+
+.first-image {
+  grid-area: first;
+}
+
+.i-detalhes {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.i-detalhes.first-image {
+  max-width: 100%;
+  height: 26rem;
+}
+
+.topo {
+  margin-top: 1rem !important;
+}
+
+.topo h2 {
+  font-weight: 600;
+}
+.topo h4 {
+  text-align: right;
+  font-size: 1.5rem;
+}
+
+.line {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  width: 100%;
+  max-width: 55rem;
+  margin: 20px 0 20px;
+}
+
+.botao-fechar {
+  display: flex;
+  justify-content: end;
+}
+
+.botao-detalhes2 {
+  background: none;
+}
+
+.botao-detalhes2 {
+  .icon {
+    color: grey;
+    font-size: 3rem;
+  }
+}
+
+.modificar-h1 {
+  font-weight: 500;
+}
+
+.reservar-caixa {
+  background: #fff;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 50px;
+}
+
+.reservar-caixa button {
+  background: rgb(46, 46, 255);
+  border: 0;
+  outline: none;
+  color: #fff;
+  padding: 0.6rem;
+  width: 15rem;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.caixinha {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.preco-titulo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
+}
+.modificar-total {
+  font-size: 1rem;
+  font-weight: 200;
+  color: rgb(34, 34, 34);
+  margin: 0 0.5rem !important;
+}
+
+.line3 {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px 0 20px;
+}
+
+.circle {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  border-radius: 50%;
+
+  transition: linear 0.25s;
+  height: 128px;
+  width: 128px;
+}
+.circle img {
+  border-radius: 50%;
+}
+
+a.circle {
+  color: transparent;
+}
+
+.foto-host {
+  height: 5rem;
+  width: 5rem;
+}
+
+.paragrafo-anfitriao {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.paragrafo-superhost {
+  margin-top: 1rem;
+}
+.comentario-host {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: rgb(34, 34, 34);
+}
+
+/* cartões dos restaurantes */
+
+.card-body h1 {
+  font-size: 1.1rem;
+  line-height: 1.1rem;
+  margin-bottom: 1px;
+}
+
+.featured-listings {
+  height: 100%;
+  display: flex;
+  color: grey;
+}
+
+.restaurant-card {
+  background: #fff;
+  width: 20rem;
+  height: 25rem;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-box-shadow: 0px 15px 88px -37px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 0px 15px 88px -37px rgba(0, 0, 0, 0.17);
+  box-shadow: 0px 15px 88px -37px rgba(0, 0, 0, 0.17);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  margin-right: 2rem;
+  margin-top: 2rem;
+}
+
+.card-header {
+  height: 50%;
+  background: center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.favorite-btn {
+  width: 50px;
+  height: 50px;
+  color: black;
+  border-radius: 50%;
+  position: relative;
+  top: 10.5rem;
+  left: 24px;
+  border: 2px solid #fff;
+  padding-top: 15px;
+  text-align: center;
+  vertical-align: center;
+  transition: 0.3s;
+  background-color: white;
+}
+
+.card-body {
+  padding: 24px;
+  font-size: 0.9rem;
+}
+
+.rating ul {
+  padding: 10px;
+}
+.rating li {
+  display: inline;
+}
+.icon-restaurante {
+  font-size: 1.5rem;
+}
+.morada-r {
+  margin-bottom: 0.6rem;
+  margin-top: 0.7rem;
+}
+
+.slick-next {
+  right: 4rem !important;
+  z-index: 1;
+  top: 11rem !important;
+}
+
+.slick-prev {
+  left: 4rem !important;
+  z-index: 1;
+  top: 11rem !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: white !important;
+  font-size: 1.8rem !important;
+}
+
+.slick-prev.slick-disabled:before {
+  opacity: 0.7 !important;
+}
+
+.custom-modal {
+  display: flex;
+  justify-content: center;
+  inset: 10rem;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 0.7rem;
+  outline: none;
+  padding: 10rem 5rem;
+  align-items: flex-start;
+}
+.custom-modal img {
+  width: auto !important;
+}
+
+.btn-mostrar-fotos {
+  padding: 0.5rem 1.2rem;
+  background: grey;
+  border: 0;
+  outline: none;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  color: white;
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.icon-todas-fotos {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.6rem;
+}
+
+.personalizar-div-mostrar {
+  display: flex;
+  justify-content: flex-end;
 }
